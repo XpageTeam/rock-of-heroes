@@ -8,7 +8,21 @@ html(lang="ru")
 	body.main.loading
 		include inc/header.pug
 		main#content
-			.wrapper
+			section.main-slider
+				.swiper-wrapper
+					- for (let i = 0; i < 3; i++)
+						.swiper-slide
+							figure.main-slider__slide
+								img(src="img/photos/main-slider-img.jpg")
+								figcaption.main-slider__slide-text
+									.wrapper
+										if (i > 0)
+											.ms-title="75 - летию Победы в Великой Отечественной войне"+i
+										else
+											.ms-title="75 - летию Победы в Великой Отечественной войне"
+				.main-slider__pagination
+					.wrapper
+						.swiper-pagination
 				
 		include inc/footer.pug
 		include inc/scripts.pug

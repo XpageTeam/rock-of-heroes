@@ -1,0 +1,26 @@
+.head
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    padding: 60px 0 20px
+    z-index: 2
+
+    &:before
+        content: ""
+        position: absolute 0 0 *
+        background: linear-gradient(180deg, rgba(49, 96, 147, 0.4) 0%, rgba(196, 196, 196, 0) 100%)
+        height: vh(390)
+
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        position: relative
+        z-index: 1
+
+.logo
+    display: block
+
+    img, svg
+        display: inherit
