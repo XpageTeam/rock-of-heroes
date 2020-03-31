@@ -1,0 +1,47 @@
+.title-block
+	position: relative
+	color: #fff
+
+	&__title
+		position: absolute * 0 50px
+
+		h1
+			font-weight: bold
+			font-size: em(90)
+
+	&__bg
+
+		img
+			display: block
+			width: 100%
+			max-height: 100vh
+			object-fit: cover
+			object-position: top center
+
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.title-block
+
+		&__title
+			bottom: 30px
+
+			h1
+				font-size: em(50)
+
+
+@media (max-width: 1000px)
+	.title-block
+		color: #000
+
+		&__title
+			position: static
+			font-size: 8px
+
+		&__bg
+			display: none
+
+@media (max-width: 660px)
+	.title-block
+
+		&__title
+			font-size: 4px

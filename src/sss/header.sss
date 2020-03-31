@@ -14,13 +14,97 @@
 
     &__wrapper
         display: flex
-        justify-content: space-between
         align-items: center
         position: relative
         z-index: 1
+
+    &__logo
+        padding-right: 20px
+        margin-right: auto
+    
+    &__btn
+        margin-left: 60px
 
 .logo
     display: block
 
     img, svg
         display: inherit
+
+@media (min-width: 1000px)
+    .h-menu
+        display: flex
+
+        li
+            
+            &:not(:last-child)
+                margin-right: 51px
+
+        &__link
+            color: #fff
+            font-size: em(14)
+            font-weight: 500
+
+
+@media (max-width: 1640px)
+    .head
+        z-index: 20
+
+@media (max-width: 1500px) and (min-width: 1150px)
+    .head
+        padding: 30px 0 20px
+
+@media (max-width: 1400px)
+    .head:before
+        height: 29vh
+
+@media (max-width: 1150px) and (min-width: 1000px)
+    .head
+        padding: 0
+
+        &__logo
+            max-width: 130px
+
+
+@media (max-width: 1000px)
+    .head
+        padding: 20px 0
+        position: sticky
+        top: 0
+        background: #fff
+        border-bottom: 1px solid #dbdbdb
+
+        &:before
+            display: none
+
+        &__nav
+            display: none
+
+        &__logo
+            max-width: 140px
+
+            svg
+                height: auto
+                margin-bottom: -10px
+
+            path[fill="white"]
+                fill: var(--main-color)
+
+            .adaptive-hidden
+                display: none
+
+        &__btn
+            margin-right: 20px
+
+        &__burger
+            margin-top: -9px
+
+@media (max-width: 660px)
+    .head
+
+        &__btn
+            margin-left: 0
+
+            .default-btn
+                font-size: 12px
+                padding: 15px

@@ -103,35 +103,31 @@ textarea.default-input__input
 				margin-right: 16px
 
 	&__input
-		border: 1px solid var(--border-color)
-		border-radius: 5px
+		border: none
+		border-bottom: 1px solid rgba(255,255,255, .5)
 		font-size: em(14)
-		color: inherit #fff
+		color: inherit transparent
 		size: 100% 53px
 		transition: border-color .3s ease
 
-		&:not(&--select)
-			padding: 17px 16px
-
 		&:not(.default-input__input--textarea)
-			max-height: 53px
+			max-height: 50px
 
 		&--error
 
-			&:not(:focus, :valid)
-				color: var(--main-color)
-				border-color: currentColor
-
+			&:not(:focus)
+				border-color: #fff
+				
 				~ .default-input
 
 					&__error
 						opacity: 1
 
 		&:focus
-			border-color: var(--main-color)
+			border-color: #fff
 
 		&--select
-			padding: 10px 50px 10px 16px
+			padding-right: 20px
 			background-image: url("../img/ico-select-arrow.svg")
 			background-repeat: no-repeat
 			background-position: right 19px center
@@ -152,12 +148,9 @@ textarea.default-input__input
 		&--file
 			position: absolute 0 * * 0
 			opacity: 0
-			size: 1px 
-			overflow: hidden
-			pointer-events: none
-
-		&-filetext
-			position: relative
+			size: 100%
+			max-height: none !important
+			cursor: pointer
 
 		&[readonly]
 			cursor: default
@@ -190,10 +183,15 @@ textarea.default-input__input
 		position: absolute calc(100% + 10px) 0 * *
 		font-size: em(12)
 		line-height: em(16)
-		color: var(--main-color)
+		color: #fff
 		trasition: opacity .3s ease
 		opacity: 0
 		pointer-events: none
+
+	&__req
+		position: absolute calc(100% + 4px) * * 0
+		color: rgba(255, 255, 255, 0.4)
+		font-size: 12px
 
 @supports (display: grid)
 	.form__inputs
@@ -287,7 +285,7 @@ body
 	.fancybox-slide, .fancybox-stage, .fancybox-inner, .fancybox-container
 		overflow-x: hidden !important
 
-	html, body
+	html
 		width: 100% !important
 		overflow-x: hidden !important
 

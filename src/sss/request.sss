@@ -1,0 +1,95 @@
+.request
+	position: relative
+	z-index: 1
+
+	&__cont
+		color: #fff var(--main-color)
+		padding: 110px 0 145px
+		position: relative
+
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+			top: -252px
+			background: url("../img/request-decor.png") no-repeat
+			size: 337px 709px
+	
+	&__top
+		display: flex
+		justify-content: space-between
+		margin: 0 0 120px
+
+		&-title
+			font-weight: bold
+			font-size: em(100)
+			line-height: calc(92 / 100)
+
+		&-text
+			max-width: 440px
+			margin-right: 30px
+			margin-top: 10px
+			font-size: em(20)
+			line-height: calc(34 / 20)
+
+	&__form
+
+		.form__inputs-input--file
+			flex-direction: row
+			align-items: flex-end
+
+			.default-btn
+				flex: none
+				margin-left: var(--input-hor-spacing)
+
+
+
+@media (max-width: 1400px)
+	.request
+
+		&__cont
+			padding: 60px 0
+
+			&:before
+				background-size: contain
+				background-position: left center
+				width: 220px
+				top: -287px
+
+		&__top
+			font-size: 12px
+			margin: 0 0 50px
+
+@media (max-width: 1200px)
+	.request
+		--input-hor-spacing: 35px
+		--input-vert-spacing: 25px
+
+@media (max-width: 660px)
+	.request
+
+		&__cont
+			padding: 30px 0
+
+			&:before
+				width: 80px
+				top: -330px
+
+		&__top
+			font-size: 10px
+			display: block
+			margin: 0 0 30px
+
+			&-title
+				font-size: em(50)
+				margin: 0 0 20px
+
+		&__form
+			
+			.form__inputs-input--file
+				flex-direction: column
+				align-items: stretch
+
+				.default-btn
+					justify-content: center
+					margin: 40px 0 0

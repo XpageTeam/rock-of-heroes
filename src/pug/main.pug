@@ -9,12 +9,23 @@ html(lang="ru")
 		include inc/header.pug
 		main#content
 			section.main-slider
+				.main-slider__decors
+					.ms-decor
+						.ms-decor__left
+							<!-- file_get_contents img/banner-left-band.svg -->
+							include ../img/banner-left-band.svg
+						.ms-decor__right
+							<!-- file_get_contents img/banner-right-band.svg -->
+							include ../img/banner-right-band.svg
 				.swiper-wrapper
 					- for (let i = 0; i < 3; i++)
 						.swiper-slide
-							figure.main-slider__slide
-								img(src="img/photos/main-slider-img.jpg")
-								figcaption.main-slider__slide-text
+							.main-slider__slide
+								picture
+									source(srcset="img/photos/main-slider-img.jpg" media="(min-width: 660px)")
+									source(srcset="img/photos/main-slider-img-mobile.png" media="(max-width: 660px)")
+									img(loading="lazy" src="img/photos/main-slider-img.jpg")
+								.main-slider__slide-text
 									.wrapper
 										if (i > 0)
 											.ms-title="75 - летию Победы в Великой Отечественной войне"+i
@@ -23,6 +34,156 @@ html(lang="ru")
 				.main-slider__pagination
 					.wrapper
 						.swiper-pagination
-				
+			section.blockquote
+				.wrapper
+					.bq-slider
+						.bq-slider__slider
+							.swiper-wrapper
+								.swiper-slide
+									.bq-slider__slide
+										.bq-slider__slide-text «Скала героев» - первый общенародный памятник участникам войны
+								.swiper-slide
+									.bq-slider__slide
+										.bq-slider__slide-text «Скала героев» - первый общенародный памятник участникам войны 1
+								.swiper-slide
+									.bq-slider__slide
+										.bq-slider__slide-text «Скала героев» - первый общенародный памятник участникам войны 2
+							.bq-slider__slider-pagination
+								.swiper-pagination
+						figure.bq-slider__img
+							img(loading="lazy" src="img/photos/bq-slider-img.jpg")
+							figcaption.bq-slider__img-name
+								.bq-name
+									.bq-name__title 
+										b Олег Колесников
+									.bq-name__subtitle депутат Государственной Думы
+			section.instruction#instruct
+				.wrapper
+					.instruct
+						a.instruct__video.fancybox(href="https://www.youtube.com/embed/R-QBqT9RQAM")
+							img(loading="lazy" src="img/photos/instruct-img.jpg")
+						.instruct__text
+							.in-text
+								.in-text__title Инструкция
+								.in-text__text 75-летию Победы в Великой Отечественной войне посвящается. Мемориал будет установлен на одной из вершин Уральских гор. Прими участие и сохрани память о своем герое!
+								.in-text__btn
+									a.scrollto.default-btn.default-btn--white(href="#form") Оставить заявку
+						.instruct__accepted
+							.in-accepted
+								.in-accepted__title принято заявок
+								.in-accepted__counter 30 000
+			section.peoples__cont#peoples
+				.wrapper
+					.peoples
+						.peoples__title
+							.peoples__title-text Участники
+							.peoples__title-arrows
+								.swiper-button-prev
+								.swiper-button-next
+						.peoples__slider
+							.p-slider
+								.swiper-wrapper
+									- for (let i = 0; i < 4; i++)
+										.swiper-slide
+											a.p-slider__slide(href="#")
+												img(loading="lazy" src="img/photos/peoples-img-"+i+".jpg")
+												.p-slider__tag #скалагероев
+			section.request__cont#form
+				.wrapper
+					.request
+						.request__top
+							.request__top-title Оставить заявку
+							.request__top-text Мы не хотим собирать у вас много личных данных, но если вы оставите нам больше информации о себе - это позволит проекту стать лучше
+						.request__form
+							form(action="#")
+								.r-form
+									.form__inputs.form__inputs--3
+										.form__inputs-input
+											.default-input
+												input.default-input__input.default-input__input--error(type="text" placeholder="Ваше имя и фамилия*" required="")
+												.default-input__error
+													.error-text Ошиька
+										.form__inputs-input.form__inputs-input--2
+											.form__inputs.form__inputs--2
+												.default-input
+													input.default-input__input(type="text" placeholder="Фамилия и имя воевавшего*" required="")
+													.default-input__error
+														.error-text
+															<!-- текст ошибки -->
+										.form__inputs-input
+											.default-input
+												input.default-input__input(type="email" placeholder="E-mail*" required="")
+												.default-input__error
+													.error-text
+														<!-- текст ошибки -->
+										.form__inputs-input
+											.default-input
+												input.default-input__input(type="tel" placeholder="Номер телефона")
+												.default-input__error
+													.error-text
+														<!-- текст ошибки -->
+										.form__inputs-input
+											.default-input
+												input.default-input__input(type="text" placeholder="Ваш город")
+												.default-input__error
+													.error-text
+														<!-- текст ошибки -->
+										.form__inputs-input.form__inputs-input--3
+											.form__inputs.form__inputs--2
+												.form__inputs-input
+													.default-input
+														input.default-input__input(type="text" placeholder="Краткая информация о родственнике (где родился, где воевал)")
+														.default-input__error
+															.error-text
+																<!-- текст ошибки -->
+												.form__inputs-input.form__inputs-input--file
+													.default-input
+														input.default-input__input.default-input__input--file(type="file" multiple="")
+														.default-input__input_filetext
+															input.default-input__input(type="text" placeholder="Прикрепить файл" readonly="")
+														span.default-input__req фотография, документ, награды
+													input.default-btn.default-btn--white(type="submit")
+			section.news__cont#news
+				.wrapper
+					.news
+						.peoples__title
+							.peoples__title-text Новости
+							.peoples__title-arrows
+								.swiper-button-prev
+								.swiper-button-next
+						.news-slider
+							.swiper-wrapper
+								.swiper-slide 
+									.news-slider__slide
+										a.news-slider__slide-img(href="#")
+											img(src="img/photos/news-slider-img.jpg")
+										.news-slider__slide-desc 
+											.ns-desc
+												a.ns-desc__title(href="#") Конкурс рисунков к юбилею Победы
+												.ns-desc__text В рамках проекта депутата Государственной Думы Олега Колесникова «Скала героев» пройдет конкурс детских рисунков «Подвиг моего героя». В нем могут принять участие все школьники с 1 по 4 класс депутатского округа Олега Колесникова
+										.news-slider__slide-btn
+											a.default-btn(href="#") Подробнее
+			section.where__cont
+				.wrapper
+					.where
+						picture.where__img
+							source(srcset="img/where-desktop.jpg" media="(min-width: 660px)")
+							source(srcset="img/where-mobile.png" media="(max-width: 660px)")
+							img(src="img/where-desktop.jpg")
+			section.partners__cont
+				.wrapper
+					.partners
+						.partners__title Партнёры
+						.partners__list
+							.p-list
+								- for (let i = 0; i < 10; i++)
+									.p-list__item
+										a.partner(href="#")
+											img(src="img/photos/ico-p-img-"+i+".png")
+						.partners__btn
+							a.default-btn(href="#")
+								<!-- подставить класс default-btn--loading для анимации загрузки -->
+								span.default-btn__text Все партнёры
+								include ../img/ico-update.svg
 		include inc/footer.pug
 		include inc/scripts.pug

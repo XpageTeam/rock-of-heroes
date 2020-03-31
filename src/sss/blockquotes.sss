@@ -1,0 +1,157 @@
+.blockquote
+	padding: 90px 37px 80px 45px
+	--text-padding: 77px
+
+.bq-slider
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	&__img
+		text-align: right
+
+		&-name
+			margin: 10px 0 0 15px
+
+	&__slider
+		width: 620px
+		margin-right: 20px
+
+		.swiper
+
+			&-slide
+				
+				&:not(.swiper-slide-active)
+					opacity: 0 !important
+
+		&-pagination
+
+			.swiper-pagination
+				position: static
+				margin: 60px 0 0
+				display: flex
+				padding-left: var(--text-padding)
+
+				&-bullet
+					border: 1px solid var(--main-color)
+					size: 12px
+					opacity: 1 !important
+					cursor: pointer
+					transition: background-color .3s ease
+					background-color: transparent
+
+					&:not(:last-child)
+						margin-right: 13px
+
+					&-active
+						background-color: var(--main-color)
+
+	&__slide
+
+		&-text
+			position: relative
+			font-weight: 300
+			font-size: em(40)
+			line-height: calc(55 / 40)
+			color: var(--main-color)
+			padding-left: var(--text-padding)
+			width: 620px
+			max-width: 100%
+
+			&:after
+				content: ""
+				display: inline-block
+				transform: rotateZ(180deg) translateY(-25px)
+				vertical-align: bottom
+				margin-left: 10px
+
+			&:before, &:after
+				content: ""
+				size: 57px
+				background: url("../img/ico-quotes.svg") no-repeat
+
+			&:before
+				content: ""
+				position: absolute -19px * * 0
+
+.bq-name
+	text-align: left
+	
+	&__title
+		font-size: em(18)
+
+	&__subtitle
+		font-size: 14px
+		color: rgba(0,0,0, .5)
+
+
+
+@media (max-width: 1500px) and (min-width: 1400px)
+	.blockquote
+		padding: 60px 30px 50px
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.blockquote
+		padding: 40px 0
+	
+
+@media (max-width: 1000px)
+	.blockquote
+		padding: 35px 0
+		background: #fff
+	
+	.bq-slider
+		font-size: 12px
+		--text-padding: 40px
+		
+		&__slider
+			width: 495px
+			max-width: 100%
+
+		&__slide
+
+			&-text
+
+				&:before, &:after
+					background-size: contain
+					size: 35px
+
+@media (max-width: 660px)
+	.blockquote
+		padding: 30px 0
+
+	.bq-slider
+		flex-direction: column-reverse
+
+		&__img
+			text-align: center
+
+			img
+				width: 135px
+
+			&-name
+				// margin-left: 0
+
+		&__slider
+			margin: 40px 0 0
+	
+	.bq-name
+		text-align: center
+
+	.bq-slider
+		font-size: 8px
+		--text-padding: 20px
+
+		&__slide
+
+			&-text
+
+				&:before, &:after
+					size: 12px
+
+		&__slider
+			
+			&-pagination
+
+				.swiper-pagination
+					margin: 30px 0 0

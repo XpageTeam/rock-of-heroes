@@ -1,0 +1,144 @@
+.inner-page
+
+	&__text
+		max-width: 900px
+
+	&__bio
+		margin: 90px 0 0
+
+.bio
+	border-top: 3px solid var(--main-color)
+	padding: 75px 0 0
+	display: flex
+
+	&__person
+		margin-right: 105px
+		width: 293px
+		flex: none
+
+	&__text
+		flex: 1 1 auto
+
+		&-title
+			font-weight: bold
+			font-weight: 400
+			font-size: em(34)
+			margin: 5px 0 45px
+
+.person
+
+	&__img
+		margin: 0 0 35px
+
+		img
+			display: block
+
+	&__text
+
+		&-title
+			font-size: em(20)
+			line-height: calc(26 / 20)
+			margin: 0 0 5px
+
+		&-subtitle
+			font-size: 14px
+			line-height: 2
+			color: rgba(0,0,0, .4)
+
+
+
+@media (min-width: 1000px), (max-width: 660px) and (min-width: 390px)
+	.marked
+		position: relative
+
+		&:before
+			content: ""
+			background: url("../img/ico-red-star.svg") left top no-repeat
+			size: 28px 26px
+			position: absolute
+			top: -2px
+			right: calc(100% + 27px)
+
+	.bio
+
+		&__text
+
+			&-text
+				padding-left: 59px
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.inner-page
+
+		&__bio
+			margin: 40px 0 0
+	
+	.bio
+		padding: 40px 0 0
+
+		&__person
+			margin-right: 55px
+
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.inner-page
+
+		&__bio
+			margin: 35px 0
+
+	.bio
+		padding: 35px 0 0
+		display: block
+
+		&:after
+			content: ""
+			clear: both
+			display: table
+
+		&__person
+			float: left
+			margin-right: 30px
+			width: 235px
+
+		&__text
+
+			&-title
+				margin: 5px 0 15px
+
+@media (max-width: 1000px)
+	.person
+
+		&__img
+			margin: 0
+
+		&__text
+			margin: 10px 0 0
+
+			&-subtitle
+				font-size: 12px
+
+
+@media (max-width: 660px)
+	.inner-page
+
+		&__text
+			font-size: 13px
+
+		&__bio
+			margin: 25px 0
+	
+	.bio
+		padding: 25px 0 0
+		display: block
+
+		&__person
+			width: auto
+			margin: 0 0 40px
+
+		&__text
+
+			&-title
+				font-size: 24px
+				margin: 0 0 20px
+
+			&-text
+				font-size: 12px

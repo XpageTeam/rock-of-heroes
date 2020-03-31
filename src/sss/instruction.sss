@@ -1,0 +1,119 @@
+.instruction
+	color: #fff var(--main-color)
+	padding: 75px 0 70px
+
+.instruct
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-start
+	justify-content: space-between
+
+	&__video
+		width: persent(572)
+		position: relative
+		background-color: #000
+
+		img
+			opacity: .8
+			display: block
+
+		&:after
+			content: ""
+			position: absolute calc(50% - 55px) calc(50% - 55px) * * 
+			size: 110px
+			background: url("../img/ico-play.svg") center no-repeat
+	
+	&__text
+		width: persent(520)
+		z-index: 1
+
+	&__accepted
+		width: 100%
+		margin: 8px 0 0
+
+.in-text
+	
+	&__title
+		display: flex
+		justify-content: flex-end
+		font-size: em(100)
+		line-height: 1
+		font-weight: bold
+		margin-top: -20px
+		-webkit-text-fill-color: transparent
+		-webkit-background-clip: text
+		-webkit-text-stroke: 1px currentColor
+		margin: 0 0 em(68, 100)
+
+	&__text
+		font-size: em(20)
+		line-height: calc(40 / 20)
+		max-width: 440px
+
+	&__btn
+		margin: 40px 0 0
+
+.in-accepted
+	font-weight: bold	
+
+	&__title
+		-webkit-text-fill-color: transparent
+		-webkit-background-clip: text
+		-webkit-text-stroke: 1px currentColor
+		font-size: em(47)
+		line-height: 92.4%
+
+	&__counter
+		font-size: em(60)
+
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.instruction
+		padding: 40px 0
+
+	.in-text
+		font-size: 14px
+
+@media (max-width: 1100px) and (min-width: 1000px)
+	.in-text
+		font-size: 13px
+
+
+@media (max-width: 1000px)
+	.instruction
+		padding: 30px 0
+
+	.in-text
+		font-size: 12px
+
+	.instruct
+		position: relative
+		padding: 90px 0 0
+
+	.in-text
+
+		&__title
+			position: absolute 0 0 *
+
+@media (max-width: 660px)
+	.in-text
+
+		&__title
+			font-size: 40px
+			display: block
+
+		&__btn
+			margin: 20px 0 0
+
+	.instruct
+		padding: 70px 0 0
+		flex-direction: column
+
+		&__video, &__text
+			width: 100%
+
+		&__text
+			margin: 20px 0 30px
+
+	.in-accepted
+		font-size: 13px

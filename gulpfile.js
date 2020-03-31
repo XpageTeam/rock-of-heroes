@@ -33,13 +33,13 @@ const server_conn = ftp.create({
 });
 
 
-
 gulp.task('browser-sync', () =>  {
 	browserSync.init({
 		server: {
 			baseDir: 'docs'
 		},
-		notify: false
+    	https: false,
+		notify: true,
 	});
 
 	browserSync.watch([
@@ -109,7 +109,7 @@ gulp.task('imagemin', () =>
 				}),
 				$.imagemin.svgo(),
 				$.imagemin.optipng({optimizationLevel: 2}),
-			  require("imagemin-pngquant")({quality: '75-85', speed: 5})
+			//   require("imagemin-pngquant")({quality: '75-85', speed: 5})
 			],{
 	     		verbose: true
 	    	})

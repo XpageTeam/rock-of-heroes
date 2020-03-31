@@ -4,13 +4,63 @@
 
 @import "_vars.sss"
 @import "_base.sss"
+@import "_text-styles.sss"
 @import "_form-elements.sss"
 @import "btns.sss"
 
 @import "base-form.sss"
 @import "my-select.sss"
+@import "mobile-menu.sss"
+@import "title-block.sss"
 
 
 @import "header.sss"
+@import "footer.sss"
 
 @import "main-slider.sss"
+@import "blockquotes.sss"
+@import "instruction.sss"
+@import "peoples.sss"
+@import "request.sss"
+@import "news.sss"
+@import "partners.sss"
+
+
+@import "inner-page.sss"
+
+.where
+
+	&__img, img
+		display: block
+		width: 100%
+
+.inner-content
+	background: #fff
+
+	&__content
+		margin: 90px 0 0
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.inner-content
+
+		&__content
+			margin: 40px 0 0
+
+@media (max-width: 1000px)
+	.inner-content
+
+		&__title
+			margin: 0
+			padding: 20px 0 0
+
+		&__content
+			margin: 30px 0 0
+
+@media (max-width: 660px)
+	.where__cont
+
+		.wrapper
+			padding: 0
+		
+		img
+			width: 100%

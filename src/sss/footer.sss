@@ -1,0 +1,88 @@
+body.inner
+
+	.inner-content
+		padding: 0 0 110px
+	
+.footer
+	color: #fff var(--main-color)
+	padding: 55px 0 60px
+	position: relative
+
+	&:before, &:after
+		content: ""
+		position: absolute
+		bottom: 0
+		pointer-events: none
+
+	&:before
+		left: 0
+		background: url("../img/footer-left-decor.png") no-repeat
+		size: width("../img/footer-left-decor.png") height("../img/footer-left-decor.png")
+
+	&:after
+		right: 0
+		background: url("../img/footer-right-decor.png") no-repeat
+		size: width("../img/footer-right-decor.png") height("../img/footer-right-decor.png")
+
+	&__wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+.copy
+	font-size: 14px
+
+	a
+		font-size: 12px
+		color: rgba(255,255,255, .59)
+
+.f-contacts
+	display: flex
+	align-items: center
+	font-size: 14px
+
+	&__address, &__another
+		
+		&:not(:last-child)
+			margin-right: 145px
+
+.dev
+	display: block
+
+	img
+		display: inherit
+
+
+
+@media (max-width: 1400px) and (min-width: 660px)
+	.footer
+		padding: 40px 0
+
+	body.inner
+
+		.inner-content
+			padding: 0 0 50px
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.f-contacts
+
+		&__address, &__another
+
+			&:not(:last-child)
+				margin-right: 30px
+
+@media (max-width: 660px)
+	body.inner
+
+		.inner-content
+			padding: 0 0 20px
+
+	.footer
+		padding: 20px 0 
+		text-align: center
+
+		&__wrap
+			display: block
+
+		&__contacts, &__dev, &:before, &:after
+			display: none

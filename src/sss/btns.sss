@@ -7,8 +7,8 @@
 	font-weight: 500
 	transition: background-color .4s ease, color .4s ease, border-color .4s ease
 	font-size: em(14)
-	padding: em(19, 14) em(20, 14) em(18, 14)
-	line-height: inherit
+	padding: 17px 20px 18px
+	line-height: 1
 	cursor: pointer
 
 	svg
@@ -26,13 +26,19 @@
 	> svg
 		margin-right: 12px
 
-	&:not(&--bordered)
+	&:not(&--bordered):not(&--white)
 		color: #fff var(--main-color)
 
 		&:hover, &:focus
 
 			&:not(:active)
 				background-color: lighten(#C42526, .1)
+
+	&__text
+		margin-right: 15px
+
+	&--white
+		color: var(--main-color) #fff
 
 	&--bordered
 		color: var(--main-color)
@@ -52,4 +58,4 @@
 		transform: rotateZ(0deg)
 		
 	100%
-		transform: rotateZ(-360deg)
+		transform: rotateZ(360deg)
