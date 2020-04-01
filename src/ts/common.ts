@@ -6,6 +6,7 @@ import "./forms";
 import domReady from "./xpage/ready";
 // import App from './xpage/core';
 import MobileMenu from './xpage/mobileMenu';
+import EventListener from './xpage/EventListener';
 
 domReady(() => {
 	document.body.classList.remove("loading");
@@ -22,7 +23,11 @@ domReady(() => {
         menuActiveClass: "js__opened",
         bodyActiveClass: "js__menu-open",
         ignoreWarnings: false,
-        fixBody: true,
+        fixBody: false,
         media: "(max-width: 1000px)"
-	})
+	});
+
+	new EventListener(".mobile-menu .h-menu__link[href*='#']").add("click", function(el: HTMLLinkElement){
+		menu.closeMenu();
+	});
 });
