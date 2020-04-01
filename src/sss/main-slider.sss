@@ -67,6 +67,20 @@
 		bottom: -120px
 		right: 0
 
+@media (min-width: 660px)
+	.main-slider
+
+		&__slide
+
+			&-text
+				display: none
+
+		&__pagination
+			bottom: 30px !important
+
+			.swiper-pagination
+				justify-content: center
+
 
 @media (max-width: 1500px) and (min-width: 660px)
 	.ms-decor
@@ -130,6 +144,9 @@
 
 			&-text
 				// display: none
-				font-size: 5px
-				bottom: 40px
+				font-size: 6.5px
+				text-align: center
+				bottom: 0
+				align-items: center
+				color: var(--main-color)
 				// max-width: 90%
