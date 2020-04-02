@@ -107,7 +107,6 @@ gulp.task('imagemin', () =>
 					max: 90,
 					quality: "high"
 				}),
-				$.imagemin.svgo(),
 				$.imagemin.optipng({optimizationLevel: 2}),
 			//   require("imagemin-pngquant")({quality: '75-85', speed: 5})
 			],{

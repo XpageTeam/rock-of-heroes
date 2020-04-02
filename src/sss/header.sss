@@ -1,3 +1,25 @@
+@media (min-width: 1000px)
+    body.main
+
+        .head
+            position: static
+            background: #fff
+            padding: 20px 0
+
+            &::before
+                display: none
+
+            &__logo
+                max-width: 160px
+
+                svg
+                    height: auto
+
+        .h-menu
+
+            &__link
+                color: #000
+        
 .head
     position: absolute
     top: 0
@@ -54,9 +76,16 @@
     .head
         padding: 30px 0 20px
 
-@media (max-width: 1400px)
-    .head:before
-        height: 29vh
+@media (max-width: 1400px) and (min-width: 1000px)
+    // .head:before
+    //     height: 29vh
+
+    body.main
+
+        .head
+
+            &__logo
+                max-width: 120px
 
 @media (max-width: 1150px) and (min-width: 1000px)
     .head
